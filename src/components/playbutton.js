@@ -1,14 +1,15 @@
+import { useState } from "react";
 import "./playbutton.css";
 
 function PlayButton({ onPlay, onPause, children }) {
 //   console.log(onPlay, onPause);
-let playing =false; 
+const [playing, setPlaying] = useState(false)
   function handleclick(e) {
     // console.log(e); // here e is an event obj
     e.stopPropagation();
     if(playing) onPause();
     else onPlay();
-    playing = !playing; 
+         setPlaying(!playing )
   }
 
   return <button onClick={handleclick}>{children}: {playing ? '>': '||'}</button>;

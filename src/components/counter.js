@@ -1,8 +1,15 @@
+import { useState } from "react";
+
+
+
 function Counter(){
-    let number =0 ; 
-    function handleClick(){
-            number++;
-            console.log(number)
+    const [number, setNumber] = useState(0);
+    function handleClick(e){
+        e.stopPropagation();
+           setNumber(number => number + 1);
+    
+     
+            // console.log(number)
     }
     return (
         <>
