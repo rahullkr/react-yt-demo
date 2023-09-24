@@ -1,4 +1,5 @@
 import "./App.css";
+import Counter from "./components/counter";
 import PlayButton from "./components/playbutton";
 import Video from "./components/video";
 import data from "./data/data";
@@ -27,10 +28,8 @@ function App() {
             </PlayButton>
           </Video>
         ))}
-
-        <div style={{ clear: "both" }}>
-          {/* <PlayButton  > pause </PlayButton> */}
-        </div>
+         
+         <Counter></Counter>
       </div>
     </>
   );
