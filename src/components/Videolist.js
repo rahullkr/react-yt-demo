@@ -1,9 +1,11 @@
 import Video from "./video";
 import PlayButton from "./playbutton";
-function VideoList({ videos }) {
+function VideoList({ videos, deleteVideo, editVideo }) {
   const newhandleclick = (message) => {
     console.log(message);
   };
+
+ 
   return (
     <>
       {videos.map((video) => (
@@ -11,9 +13,11 @@ function VideoList({ videos }) {
           title={video.title}
           id={video.id}
           channel={video.channel}
-          views={video.channel}
+          views={video.views}
           time={video.time}
           verified={video.verified}
+          deleteVideo={deleteVideo}
+          editVideo={editVideo}
         >
           <PlayButton
             onPlay={() => newhandleclick("play button clicked")}
